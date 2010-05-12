@@ -4,7 +4,6 @@ var config = require('./config').config;
 var irc = require('./lib/irc');
 var fs = require('fs');
 var path = require('path');
-var repl = require('repl');
 
 sys.puts(sys.inspect(config));
 
@@ -86,5 +85,3 @@ client.addListener('PRIVMSG', function(prefix, channel, text) {
   var user = irc.user(prefix);
   writeLog(user+': '+text);
 });
-
-repl.start("logbot> ");
